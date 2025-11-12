@@ -3,7 +3,6 @@ import pandas as pd
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 import datetime
-
 # --- MongoDB CONNECTION ---
 @st.cache_resource
 def get_database():
@@ -99,4 +98,5 @@ elif "role" in st.session_state and st.session_state["role"] == "User":
 if "role" in st.session_state:
     if st.button("Logout"):
         st.session_state.clear()
+
         st.experimental_rerun()
