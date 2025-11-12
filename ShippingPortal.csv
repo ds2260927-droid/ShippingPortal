@@ -1,0 +1,11 @@
+Shipment ID,Customer Name,Customer Email,Shipping Address,Courier,Shipment Date,Shipment Status,Package Weight (kg)
+SHP0001,John Doe,john.doe@email.com,"123 Maple St, Chicago, IL, USA",FedEx,10-11-2025,Delivered,2.5
+SHP0002,Maria Smith,maria.smith@email.com,"45 Regent St, London, UK",DHL,11-11-2025,In Transit,1.2
+SHP0003,Ahmed Khan,ahmed.khan@email.com,"12 Al Nahda St, Dubai, UAE",Aramex,12-11-2025,Processing,3.8
+SHP0004,Li Wei,li.wei@email.com,"88 Nanjing Rd, Shanghai, China",SF Express,12-11-2025,Shipped,4.1
+SHP0005,Carlos Ruiz,carlos.ruiz@email.com,"10 Avenida Central, Madrid, Spain",UPS,13-11-2025,Delivered,2.9
+SHP0006,Sarah Johnson,sarah.johnson@email.com,"500 King St, Toronto, Canada",Purolator,13-11-2025,Out for Delivery,1.7
+SHP0007,Tom Becker,tom.becker@email.com,"21 Hauptstrasse, Berlin, Germany",DHL,14-11-2025,In Transit,2.3
+SHP0008,Aisha Ali,aisha.ali@email.com,"7 Marina Rd, Lagos, Nigeria",FedEx,14-11-2025,Processing,5
+SHP0009,Emma Brown,emma.brown@email.com,"32 Swan St, Melbourne, Australia",TNT,15-11-2025,Shipped,3.5
+SHP0010,Raj Patel,raj.patel@email.com,"76 Nehru Rd, Mumbai, India",Blue Dart,15-11-2025,Delivered,2.1
