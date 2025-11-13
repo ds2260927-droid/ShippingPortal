@@ -16,15 +16,6 @@ def get_database():
 db = get_database()
 users_collection = db["users"]
 shipments_collection = db["shipments"]
-# --- ENSURE ADMIN USER EXISTS ---
-if not users_collection.find_one({"user_id": "admin"}):
-    users_collection.insert_one({
-        "user_id": "admin",
-        "name": "Administrator",
-        "password": "admin123",
-        "role": "Admin"
-    })
-
 
 # --- HELPER FUNCTIONS ---
 def create_user(user_id, name, password):
@@ -131,4 +122,6 @@ if st.session_state["role"] is not None:
     if st.button("Logout"):
         st.session_state.clear()
         st.rerun()  # ✅ Updated (not experimental)
+
+
 
