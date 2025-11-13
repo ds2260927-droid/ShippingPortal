@@ -7,7 +7,7 @@ import datetime
 # --- MongoDB CONNECTION ---
 @st.cache_resource
 def get_database():
-    uri = st.secrets["mongo"]["uri"]
+    uri = st.secret["mongo"]["uri"]
     client = MongoClient(uri)
     db = client["shipping_portal"]
     return db
@@ -100,5 +100,7 @@ if "role" in st.session_state:
     if st.button("Logout"):
         st.session_state.clear()
 
-        st.experimental_rerun()
+        st.rerun()
+
+
 
