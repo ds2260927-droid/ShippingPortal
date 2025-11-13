@@ -17,6 +17,16 @@ db = get_database()
 users_collection = db["users"]
 shipments_collection = db["shipments"]
 
+# --- ENSURE ADMIN USER EXISTS ---
+# Automatically create admin account if not already in DB
+if not users_collection.find_one({"user_id": "manan"}):
+    users_collection.insert_one({
+        "user_id": "manan",
+        "name": "Admin Manan",
+        "password": "manan",
+        "role": "Admin"
+    })
+
 # --- HELPER FUNCTIONS ---
 def create_user(user_id, name, password):
     """Create a new user in the database."""
@@ -67,11 +77,11 @@ password = st.text_input("Password", type="password")
 if st.button("Login"):
     user = validate_user(user_id, password)
     if user:
-        if role == "Admin" and user["user_id"].lower() == "admin":
+        if role == "Admin" and user["role"] == "Admin":
             st.session_state["role"] = "Admin"
             st.session_state["user_id"] = user_id
             st.success("✅ Logged in as Admin")
-        elif role == "User":
+        elif role == "User" and user["role"] == "user":
             st.session_state["role"] = "User"
             st.session_state["user_id"] = user_id
             st.success("✅ Logged in as User")
@@ -122,6 +132,3 @@ if st.session_state["role"] is not None:
     if st.button("Logout"):
         st.session_state.clear()
         st.rerun()  # ✅ Updated (not experimental)
-
-
-
